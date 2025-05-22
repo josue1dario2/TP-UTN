@@ -1,2 +1,2 @@
 # TP-UTN
-Trabajo práctico integrador 
+Trabajo práctico integrador de Tecnicatura en programación 
