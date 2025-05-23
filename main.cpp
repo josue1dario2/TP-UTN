@@ -2,8 +2,15 @@
 
 using namespace std;
 
+void mostrarMenu();
+
 int main()
 {
-    cout << "Hello world!" << endl;    
+    mostrarMenu();
     return 0;
+}
+
+void mostrarMenu()
+{
+    cout << "TO DO mostrar menu" << endl;
 }
