@@ -1,20 +1,10 @@
 #include <iostream>
-
 using namespace std;
-
-void mostrarMenu();
+#include "funciones.h"
 
 int main()
 {
-    mostrarMenu();
-
+    int opcion = seleccionarOpcion();
+    cout << "La opcion seleccionada es " << opcion << endl;
     return 0;
-}
-
-void mostrarMenu()
-{
-    cout << "1.Jugar" << endl;
-    cout << "2.Estadísticas" << endl;
-    cout << "3.Créditos" << endl;
-    cout << "4.Salir" << endl;
 }
