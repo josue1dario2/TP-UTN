@@ -4,6 +4,7 @@ using namespace std;
 
 int main()
 {
-    cout << "La opcion seleccionada es " << seleccionarOpcion() << endl;
+    int opcion = seleccionarOpcion();
+    cout << "La opcion seleccionada es " << opcion << endl;
     return 0;
 }
