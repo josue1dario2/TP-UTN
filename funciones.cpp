@@ -36,3 +36,12 @@ void mostrarCreditos()
     cout << "Íconos por Freepik, Logo por Logo Maker\n";
     cout << "Diseño del juego por Angel Simon\n";
 }
+
+void limpiarPantalla()
+{
+#ifdef _WIN32
+    system("cls");
+#else
+    system("clear");
+#endif
+}
