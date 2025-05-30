@@ -1,6 +1,7 @@
 #include "funciones.h"
 #include "rlutil.h"
 #include <iostream>
+
 using namespace std;
 
 int seleccionarOpcion()
@@ -10,8 +11,8 @@ int seleccionarOpcion()
     {
         cout << "Menu principal: " << endl;
         cout << "1.Jugar" << endl;
-        cout << "2.Estadísticas" << endl;
-        cout << "3.Créditos" << endl;
+        cout << "2.Estadisticas" << endl;
+        cout << "3.Creditos" << endl;
         cout << "0.Salir" << endl;
         cin >> opcion;
 
