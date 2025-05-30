@@ -1,4 +1,5 @@
 #include "funciones.h"
+#include "rlutil.h"
 #include <iostream>
 using namespace std;
 
@@ -39,9 +40,5 @@ void mostrarCreditos()
 
 void limpiarPantalla()
 {
-#ifdef _WIN32
-    system("cls");
-#else
-    system("clear");
-#endif
+    rlutil::cls();
 }
