@@ -28,12 +28,14 @@ int seleccionarOpcion()
 void mostrarCreditos()
 {
     limpiarPantalla();
-    cout << "Créditos\n";
+    cout << "Creditos\n";
     cout << "Juego: Enfrendados\n";
-    cout << "Creado por: [Nombre del Equipo]\n";
+    cout << "Creado por: Equipo 15\n";
     cout << "Integrantes:\n";
-    cout << "- [Apellido], [Nombre], [Legajo]\n";
-    cout << "- [Apellido], [Nombre], [Legajo]\n";
+    cout << "- Maffey, Lucia, 31862\n";
+    cout << "- Rivero, Camila, 32508\n";
+    cout << "- Solis, Josue, 32522\n";
+    cout << "- Totilo, Ivan, 29192\n";
     cout << "Íconos por Freepik, Logo por Logo Maker\n";
     cout << "Diseño del juego por Angel Simon\n";
 }
