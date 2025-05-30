@@ -6,4 +6,3 @@ Josué Solis
 Lucia Aylen Maffey
 Ivan Totilo
 
-Crear método mostrarCreditos ejemplo
