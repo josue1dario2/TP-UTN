@@ -1,5 +1,7 @@
 #include "funciones.h"
+#include <cstdlib>
 #include <iostream>
+
 using namespace std;
 
 int seleccionarOpcion()
@@ -9,8 +11,8 @@ int seleccionarOpcion()
     {
         cout << "Menu principal: " << endl;
         cout << "1.Jugar" << endl;
-        cout << "2.Estadísticas" << endl;
-        cout << "3.Créditos" << endl;
+        cout << "2.Estadisticas" << endl;
+        cout << "3.Creditos" << endl;
         cout << "0.Salir" << endl;
         cin >> opcion;
 
@@ -27,12 +29,14 @@ int seleccionarOpcion()
 void mostrarCreditos()
 {
     limpiarPantalla();
-    cout << "Créditos\n";
+    cout << "Creditos\n";
     cout << "Juego: Enfrendados\n";
-    cout << "Creado por: [Nombre del Equipo]\n";
+    cout << "Creado por: Equipo 15\n";
     cout << "Integrantes:\n";
-    cout << "- [Apellido], [Nombre], [Legajo]\n";
-    cout << "- [Apellido], [Nombre], [Legajo]\n";
+    cout << "- Maffey, Lucia, 31862\n";
+    cout << "- Rivero, Camila, 32508\n";
+    cout << "- Solis, Josue, 32522\n";
+    cout << "- Totilo, Ivan, 29192\n";
     cout << "Íconos por Freepik, Logo por Logo Maker\n";
     cout << "Diseño del juego por Angel Simon\n";
 }
