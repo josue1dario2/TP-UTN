@@ -26,6 +26,10 @@ int seleccionarOpcion()
     return opcion;
 }
 
+int tirarDado(int caras) {
+    return (rand() % caras) + 1;
+}
+
 void mostrarCreditos()
 {
     limpiarPantalla();
