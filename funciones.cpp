@@ -1,4 +1,5 @@
 #include "funciones.h"
+#include "rlutil.h"
 #include <iostream>
 using namespace std;
 
@@ -35,4 +36,9 @@ void mostrarCreditos()
     cout << "- [Apellido], [Nombre], [Legajo]\n";
     cout << "Íconos por Freepik, Logo por Logo Maker\n";
     cout << "Diseño del juego por Angel Simon\n";
+}
+
+void limpiarPantalla()
+{
+    rlutil::cls();
 }
