@@ -26,6 +26,11 @@ int seleccionarOpcion()
     return opcion;
 }
 
+int tirarDado(int caras)
+{
+    return (rand() % caras) + 1;
+}
+
 void mostrarCreditos()
 {
     limpiarPantalla();
@@ -44,4 +49,34 @@ void mostrarCreditos()
 void limpiarPantalla()
 {
     rlutil::cls();
+}
+
+int quienEmpieza(string jugador1, string jugador2)
+{
+    int dado1, dado2;
+    srand(time(0)); // Inicializa el generador de números aleatorios con la hora actual
+
+    do
+    {
+        dado1 = tirarDado(6);
+        dado2 = tirarDado(6);
+        cout << jugador1 << " tira: " << dado1 << endl;
+        cout << jugador2 << " tira: " << dado2 << endl;
+
+        if (dado1 == dado2)
+        {
+            cout << "¡Empate! Tirando de nuevo..." << endl;
+        }
+    } while (dado1 == dado2);
+
+    if (dado1 > dado2)
+    {
+        cout << jugador1 << " gana la tirada inicial!" << endl;
+        return 1;
+    }
+    else
+    {
+        cout << jugador2 << " gana la tirada inicial!" << endl;
+        return 2;
+    }
 }
