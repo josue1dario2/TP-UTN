@@ -26,6 +26,7 @@ int seleccionarOpcion()
     return opcion;
 }
 
+
 int tirarDado(int caras)
 {
     return (rand() % caras) + 1;
@@ -79,4 +80,7 @@ int quienEmpieza(string jugador1, string jugador2)
         cout << jugador2 << " gana la tirada inicial!" << endl;
         return 2;
     }
+}
+int lanzarDadosObjetivo(){ 
+    return tirarDado(12) + tirarDado(12);
 }
