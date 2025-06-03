@@ -91,7 +91,7 @@ for (int i=0; i<cantidad; i++){
 }
 }
 
-int computarPuntaje(int suma, const int dadosElegidos[], int tamano, int objetivo) {
+int computarPuntaje(int suma, int dadosElegidos[], int tamano, int objetivo) {
     if (suma == objetivo) {
         return suma * tamano;
     } else {
