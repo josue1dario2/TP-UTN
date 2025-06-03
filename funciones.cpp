@@ -80,3 +80,6 @@ int quienEmpieza(string jugador1, string jugador2)
         return 2;
     }
 }
+int lanzarDadosObjetivo(){ 
+    return tirarDado(12) + tirarDado(12);
+}
