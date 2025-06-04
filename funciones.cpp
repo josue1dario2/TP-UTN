@@ -90,3 +90,11 @@ for (int i=0; i<cantidad; i++){
     dados[i]=tirarDado(cantidad);
 }
 }
+
+int computarPuntaje(int suma, int dadosElegidos[], int tamano, int objetivo) {
+    if (suma == objetivo) {
+        return suma * tamano;
+    } else {
+        return 0;
+    }
+}
