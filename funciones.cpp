@@ -26,7 +26,6 @@ int seleccionarOpcion()
     return opcion;
 }
 
-
 int tirarDado(int caras)
 {
     return (rand() % caras) + 1;
@@ -81,20 +80,33 @@ int quienEmpieza(string jugador1, string jugador2)
         return 2;
     }
 }
-int lanzarDadosObjetivo(){ 
+int lanzarDadosObjetivo()
+{
     return tirarDado(12) + tirarDado(12);
 }
-void tirarDadosJugador(int cantidad,int dados[]){
+void tirarDadosJugador(int cantidad, int dados[])
+{
 
-for (int i=0; i<cantidad; i++){
-    dados[i]=tirarDado(cantidad);
-}
+    for (int i = 0; i < cantidad; i++)
+    {
+        dados[i] = tirarDado(cantidad);
+    }
 }
 
-int computarPuntaje(int suma, int dadosElegidos[], int tamano, int objetivo) {
-    if (suma == objetivo) {
+int computarPuntaje(int suma, int dadosElegidos[], int tamano, int objetivo)
+{
+    if (suma == objetivo)
+    {
         return suma * tamano;
-    } else {
+    }
+    else
+    {
         return 0;
     }
+}
+
+void modificarDados(int &jugador, int tamanoSeleccionados, int &rival)
+{
+    jugador -= tamanoSeleccionados;
+    rival += tamanoSeleccionados;
 }
