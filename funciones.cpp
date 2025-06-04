@@ -105,6 +105,7 @@ int computarPuntaje(int suma, int dadosElegidos[], int tamano, int objetivo)
     }
 }
 
+
 void elegirCombinacion(int objetivo, int dados[], int tamano, int seleccionados[], int &tamanoSeleccionados)
 {
     tamanoSeleccionados = 0;
@@ -141,4 +142,9 @@ void elegirCombinacion(int objetivo, int dados[], int tamano, int seleccionados[
         }
         cout << "Siguiente dado (0 para terminar): ";
     }
+
+void modificarDados(int &jugador, int tamanoSeleccionados, int &rival)
+{
+    jugador -= tamanoSeleccionados;
+    rival += tamanoSeleccionados;
 }
