@@ -1,4 +1,6 @@
 #pragma once
+#include <string>
+using namespace std;
 
 int seleccionarOpcion();
 void limpiarPantalla();
@@ -6,4 +8,4 @@ void mostrarCreditos();
 int tirarDado(int caras);
 int quienEmpieza(string nombre1, string nombre2);
 int lanzarDadosObjetivo();
-void tirarDadosJugador(int cantidad,int dados[]);
+void tirarDadosJugador(int cantidad, int dados[]);
