@@ -80,6 +80,7 @@ int quienEmpieza(string jugador1, string jugador2)
         return 2;
     }
 }
+
 void mostrarMenu()
 {
     cout << "    _______   ____________  _______  ______  ___    ____  ____  _____\n";
@@ -89,4 +90,73 @@ void mostrarMenu()
     cout << "/_____/_/ |_/_/   /_/ |_/____/_/  _/_____/_/  |_/_____/\\____/_____/\n";
     cout << "\n1 - JUGAR\n2 - ESTADISTICAS\n3 - CREDITOS\n---------------------\n0 - SALIR\n";
     cout << "Opción: ";
+}
+int lanzarDadosObjetivo()
+{
+    return tirarDado(12) + tirarDado(12);
+}
+void tirarDadosJugador(int cantidad, int dados[])
+{
+
+    for (int i = 0; i < cantidad; i++)
+    {
+        dados[i] = tirarDado(cantidad);
+    }
+}
+
+int computarPuntaje(int suma, int dadosElegidos[], int tamano, int objetivo)
+{
+    if (suma == objetivo)
+    {
+        return suma * tamano;
+    }
+    else
+    {
+        return 0;
+    }
+}
+
+
+void elegirCombinacion(int objetivo, int dados[], int tamano, int seleccionados[], int &tamanoSeleccionados)
+{
+    tamanoSeleccionados = 0;
+    int sumaActual = 0;
+    cout << "Dados disponibles:\n";
+    for (int i = 0; i < tamano; i++)
+    {
+        cout << "  [" << i + 1 << "] " << dados[i];
+    }
+    cout << "\n\nSelecciona los dados por su número (0 para terminar): ";
+    while (sumaActual < objetivo)
+    {
+        int indiceDado;
+        cin >> indiceDado;
+        if (indiceDado == 0)
+        {
+            tamanoSeleccionados = 0;
+            return;
+        }
+        if (indiceDado < 1 || indiceDado > tamano)
+        {
+            cout << "Número inválido. Intenta de nuevo: ";
+            continue;
+        }
+        seleccionados[tamanoSeleccionados++] = dados[indiceDado - 1];
+        sumaActual += dados[indiceDado - 1];
+        cout << "Suma actual: " << sumaActual << "\n";
+        if (sumaActual == objetivo)
+            return;
+        if (sumaActual > objetivo)
+        {
+            tamanoSeleccionados = 0;
+            return;
+        }
+        cout << "Siguiente dado (0 para terminar): ";
+    }
+
+void modificarDados(int &jugador, int tamanoSeleccionados, int &rival)
+{
+    jugador -= tamanoSeleccionados;
+    rival += tamanoSeleccionados;
+
 }
