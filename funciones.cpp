@@ -153,7 +153,7 @@ void elegirCombinacion(int objetivo, int dados[], int tamano, int seleccionados[
         }
         cout << "Siguiente dado (0 para terminar): ";
     }
-
+}
 void modificarDados(int &jugador, int tamanoSeleccionados, int &rival)
 {
     jugador -= tamanoSeleccionados;
