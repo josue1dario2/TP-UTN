@@ -80,6 +80,17 @@ int quienEmpieza(string jugador1, string jugador2)
         return 2;
     }
 }
+
+void mostrarMenu()
+{
+    cout << "    _______   ____________  _______  ______  ___    ____  ____  _____\n";
+    cout << "   / ____/ | / / ____/ __ \\/ ___/ | / / __ \\/   |  / __ \\/ __ \\/ ___/\n";
+    cout << "  / __/ /  |/ / /_  / /_/ / __//  |/ / / / / /| | / / / / / / /\\__ \\\n";
+    cout << " / /___/ /|  / __/ / _  _/ /__/ /|  / /_/ / ___ |/ /_/ / /_/ /___/ /\n";
+    cout << "/_____/_/ |_/_/   /_/ |_/____/_/  _/_____/_/  |_/_____/\\____/_____/\n";
+    cout << "\n1 - JUGAR\n2 - ESTADISTICAS\n3 - CREDITOS\n---------------------\n0 - SALIR\n";
+    cout << "Opción: ";
+}
 int lanzarDadosObjetivo()
 {
     return tirarDado(12) + tirarDado(12);
@@ -142,9 +153,10 @@ void elegirCombinacion(int objetivo, int dados[], int tamano, int seleccionados[
         }
         cout << "Siguiente dado (0 para terminar): ";
     }
-
+}
 void modificarDados(int &jugador, int tamanoSeleccionados, int &rival)
 {
     jugador -= tamanoSeleccionados;
     rival += tamanoSeleccionados;
+
 }
