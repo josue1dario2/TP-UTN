@@ -1,5 +1,6 @@
 #include "funciones.h"
 #include "rlutil.h"
+#include <ctime>
 #include <iostream>
 
 using namespace std;
@@ -110,6 +111,7 @@ string definirCampeon(int puntos1, int puntos2, int rondas, string jugador1, str
     } else { 
         return "Empate";
     }
+}
 
 void tirarDadosJugador(int cantidad, int dados[])
 {
