@@ -86,8 +86,8 @@ int lanzarDadosObjetivo(){
 }
 
 
-{ 
-    string definirCampeon(int puntos1, int puntos2, int rondas, string jugador1, string jugador2);
+
+string definirCampeon(int puntos1, int puntos2, int rondas, string jugador1, string jugador2) {
     if (rondas != 3) {
         return "";
         }
