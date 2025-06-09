@@ -160,3 +160,12 @@ void modificarDados(int &jugador, int tamanoSeleccionados, int &rival)
     rival += tamanoSeleccionados;
 
 }
+
+bool chequearTriunfo(int jugador, int &puntos) {
+    if (jugador == 0) {
+        puntos += 10000; 
+        return true;      
+    } else {
+        return false;     
+    }
+}
