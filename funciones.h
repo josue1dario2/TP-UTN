@@ -14,4 +14,6 @@ int computarPuntaje(int suma, int dadosElegidos[], int tamano, int objetivo);
 void elegirCombinacion(int objetivo, int dados[], int tamano, int seleccionados[], int &tamanoSeleccionados);
 void modificarDados(int &jugador, int tamanoSeleccionados, int &rival);
 bool chequearTriunfo(int jugador, int &puntos);
+void castigarFallo(int &jugador, int &rival);
+void cambiarTurno(int &puntos1, int &puntos2, int &stock1, int &stock2, int &turno);
 
