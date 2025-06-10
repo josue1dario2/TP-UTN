@@ -153,11 +153,13 @@ void elegirCombinacion(int objetivo, int dados[], int tamano, int seleccionados[
         cout << "Siguiente dado (0 para terminar): ";
     }
 }
+
 void modificarDados(int &jugador, int tamanoSeleccionados, int &rival)
 {
     jugador -= tamanoSeleccionados;
     rival += tamanoSeleccionados;
 }
+
 
 void castigarFallo(int &jugador, int &rival)
 {
@@ -167,3 +169,12 @@ void castigarFallo(int &jugador, int &rival)
         jugador++;
     }
 }
+
+void cambiarTurno(int &puntos1, int &puntos2, int &stock1, int &stock2, int &turno)
+{
+    if (turno == 1)
+        turno = 2;
+    else
+        turno = 1;
+}
+
