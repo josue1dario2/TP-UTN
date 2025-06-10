@@ -134,7 +134,6 @@ int computarPuntaje(int suma, int dadosElegidos[], int tamano, int objetivo)
     }
 }
 
-
 void elegirCombinacion(int objetivo, int dados[], int tamano, int seleccionados[], int &tamanoSeleccionados)
 {
     tamanoSeleccionados = 0;
@@ -172,8 +171,36 @@ void elegirCombinacion(int objetivo, int dados[], int tamano, int seleccionados[
         cout << "Siguiente dado (0 para terminar): ";
     }
 }
+
 void modificarDados(int &jugador, int tamanoSeleccionados, int &rival)
 {
     jugador -= tamanoSeleccionados;
     rival += tamanoSeleccionados;
+}
+
+
+void castigarFallo(int &jugador, int &rival)
+{
+    if (rival > 1)
+    {
+        rival--;
+        jugador++;
+    }
+}
+
+void cambiarTurno(int &puntos1, int &puntos2, int &stock1, int &stock2, int &turno)
+{
+    if (turno == 1)
+        turno = 2;
+    else
+        turno = 1;
+}
+
+bool chequearTriunfo(int jugador, int &puntos) {
+    if (jugador == 0) {
+        puntos += 10000; 
+        return true;      
+    } else {
+        return false;     
+    }
 }
