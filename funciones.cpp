@@ -178,3 +178,12 @@ void cambiarTurno(int &puntos1, int &puntos2, int &stock1, int &stock2, int &tur
         turno = 1;
 }
 
+bool chequearTriunfo(int jugador, int &puntos) {
+    if (jugador == 0) {
+        puntos += 10000; 
+        return true;      
+    } else {
+        return false;     
+    }
+}
+
