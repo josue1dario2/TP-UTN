@@ -116,7 +116,6 @@ int computarPuntaje(int suma, int dadosElegidos[], int tamano, int objetivo)
     }
 }
 
-
 void elegirCombinacion(int objetivo, int dados[], int tamano, int seleccionados[], int &tamanoSeleccionados)
 {
     tamanoSeleccionados = 0;
@@ -159,7 +158,16 @@ void modificarDados(int &jugador, int tamanoSeleccionados, int &rival)
 {
     jugador -= tamanoSeleccionados;
     rival += tamanoSeleccionados;
+}
 
+
+void castigarFallo(int &jugador, int &rival)
+{
+    if (rival > 1)
+    {
+        rival--;
+        jugador++;
+    }
 }
 
 void cambiarTurno(int &puntos1, int &puntos2, int &stock1, int &stock2, int &turno)
@@ -169,3 +177,4 @@ void cambiarTurno(int &puntos1, int &puntos2, int &stock1, int &stock2, int &tur
     else
         turno = 1;
 }
+
