@@ -2,7 +2,6 @@
 #include <string>
 using namespace std;
 
-int seleccionarOpcion();
 void limpiarPantalla();
 void mostrarCreditos();
 int tirarDado(int caras);
