@@ -2,7 +2,6 @@
 #include <string>
 using namespace std;
 
-int seleccionarOpcion();
 void limpiarPantalla();
 void mostrarCreditos();
 int tirarDado(int caras);
@@ -16,5 +15,4 @@ void modificarDados(int &jugador, int tamanoSeleccionados, int &rival);
 bool chequearTriunfo(int jugador, int &puntos);
 void castigarFallo(int &jugador, int &rival);
 void cambiarTurno(int &puntos1, int &puntos2, int &stock1, int &stock2, int &turno);
-
 string definirCampeon(int puntos1, int puntos2, int rondas, string jugador1, string jugador2);

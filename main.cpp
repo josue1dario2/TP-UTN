@@ -1,31 +1,40 @@
 #include <iostream>
-
+#include "funciones.h"
 using namespace std;
 
+int main()
+{
+    srand(time(0));
 
-int main() {
-  int opcion; 
-do
+    int opcion;
+    do
     {
-        if (opcion == 1)
+        mostrarMenu();
+        cin >> opcion;
+        switch (opcion)
         {
-		    // TO DO funcionalidad de jugar
+        case 1:
+            // TODO jugar
+            cout << "Ingreso a la fucion jugar" << endl;
+            break;
+        case 2:
+            // TODO estadisticas
+            cout << "Ingreso a la funcion estadisticas" << endl;
+            break;
+        case 3:
+            mostrarCreditos();
+            break;
+        case 0:
+        {
+            char confirm;
+            cout << "\nSeguro que queres salir? (s/n): ";
+            cin >> confirm;
+            if (confirm != 's')
+                opcion = -1;
+            break;
         }
-        else if (opcion == 2)
-        {
-         	// TO DO funcionalidad de estadísticas
-        }
-        else if (opcion == 3)
-        {
-         	// TO DO funcionalidad de creditos
-        }
-        else if (opcion == 0)
-        {
-       		// TO DO funcionalidad de salir de juego preguntar si desea salir 
-        }
-        else
-        {
-            cout << "Opción inválida.";
+        default:
+            cout << "\nOpción incorrecta.\n";
         }
     } while (opcion != 0);
     return 0;

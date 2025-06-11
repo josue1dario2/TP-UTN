@@ -5,28 +5,6 @@
 
 using namespace std;
 
-int seleccionarOpcion()
-{
-    int opcion;
-    do
-    {
-        cout << "Menu principal: " << endl;
-        cout << "1.Jugar" << endl;
-        cout << "2.Estadisticas" << endl;
-        cout << "3.Creditos" << endl;
-        cout << "0.Salir" << endl;
-        cin >> opcion;
-
-        switch (opcion)
-        {
-        case 0:
-            return 0;
-            break;
-        }
-    } while (opcion != 0);
-    return opcion;
-}
-
 int tirarDado(int caras)
 {
     return (rand() % caras) + 1;
@@ -97,18 +75,22 @@ int lanzarDadosObjetivo()
     return tirarDado(12) + tirarDado(12);
 }
 
-
-string definirCampeon(int puntos1, int puntos2, int rondas, string jugador1, string jugador2) {
-    if (rondas != 3) {
+string definirCampeon(int puntos1, int puntos2, int rondas, string jugador1, string jugador2)
+{
+    if (rondas != 3)
+    {
         return "";
-        }
-    if (puntos1 > puntos2) {
+    }
+    if (puntos1 > puntos2)
+    {
         return jugador1;
-    
-    } else if (puntos2 > puntos1) {
+    }
+    else if (puntos2 > puntos1)
+    {
         return jugador2;
-
-    } else { 
+    }
+    else
+    {
         return "Empate";
     }
 }
@@ -178,7 +160,6 @@ void modificarDados(int &jugador, int tamanoSeleccionados, int &rival)
     rival += tamanoSeleccionados;
 }
 
-
 void castigarFallo(int &jugador, int &rival)
 {
     if (rival > 1)
@@ -196,11 +177,15 @@ void cambiarTurno(int &puntos1, int &puntos2, int &stock1, int &stock2, int &tur
         turno = 1;
 }
 
-bool chequearTriunfo(int jugador, int &puntos) {
-    if (jugador == 0) {
-        puntos += 10000; 
-        return true;      
-    } else {
-        return false;     
+bool chequearTriunfo(int jugador, int &puntos)
+{
+    if (jugador == 0)
+    {
+        puntos += 10000;
+        return true;
+    }
+    else
+    {
+        return false;
     }
 }
