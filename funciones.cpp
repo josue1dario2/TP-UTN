@@ -177,3 +177,19 @@ void modificarDados(int &jugador, int tamanoSeleccionados, int &rival)
     jugador -= tamanoSeleccionados;
     rival += tamanoSeleccionados;
 }
+
+void mostrarEstadisticas(const Estadisticas& stats) {
+    if (stats.mayorPuntaje == 0) {
+       std:: cout << "No hay estadísticas aún, no se jugaron partidas." << std:: endl;
+    } else {
+       std:: cout << "Mejor jugador: " << stats.mejorJugador << std::endl;
+       std:: cout << "Mayor puntaje: " << stats.mayorPuntaje << std::endl;
+    }
+}
+
+void actualizarEstadisticas(Estadisticas& stats, const string& jugador, int puntaje) {
+    if (puntaje > stats.mayorPuntaje) {
+        stats.mayorPuntaje = puntaje;
+        stats.mejorJugador = jugador;
+    }
+}

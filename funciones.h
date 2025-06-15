@@ -2,6 +2,13 @@
 #include <string>
 using namespace std;
 
+struct Estadisticas {
+    string mejorJugador;
+    int mayorPuntaje = 0; 
+};
+
+void mostrarEstadisticas(const Estadisticas& stats);
+void actualizarEstadisticas(Estadisticas& stats, const string& jugador, int puntaje);
 int seleccionarOpcion();
 void limpiarPantalla();
 void mostrarCreditos();

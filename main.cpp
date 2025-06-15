@@ -1,12 +1,24 @@
 #include <iostream>
-
+#include <string>S
+#include "funciones.h"
 using namespace std;
 
-
 int main() {
+    Estadisticas stats;
+     stats.mejorJugador = "Jugador 1"; // Ejemplo para test
+    stats.mayorPuntaje = 100;         // Ejemplo para test
+
   int opcion; 
 do
     {
+         cout << "\nMenu:\n";
+        cout << "1 - Jugar\n";
+        cout << "2 - Estadísticas\n";
+        cout << "3 - Créditos\n";
+        cout << "0 - Salir\n";
+        cout << "Opción: ";
+        cin >> opcion;
+        
         if (opcion == 1)
         {
 		    // TO DO funcionalidad de jugar
