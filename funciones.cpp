@@ -189,3 +189,21 @@ bool chequearTriunfo(int jugador, int &puntos)
         return false;
     }
 }
+
+void mostrarCreditos() {
+    cout << "\n--- CRÉDITOS ---\n";
+    cout << "Trabajo Práctico Integrador - Programación I\n";
+    cout << "Integrantes: Camila, etc...\n";
+}
+
+void mostrarEstadisticas(const Estadisticas& stats) {
+    cout << "\n--- ESTADÍSTICAS ---\n";
+    cout << "Mejor jugador: " << stats.mejorJugador << endl;
+    cout << "Mayor puntaje: " << stats.mayorPuntaje << endl;
+}
+void actualizarEstadisticas(Estadisticas& stats, const string& jugador, int puntaje) {
+    if (puntaje > stats.mayorPuntaje) {
+        stats.mayorPuntaje = puntaje;
+        stats.mejorJugador = jugador;
+    }
+}
