@@ -1,4 +1,5 @@
 #include <iostream>
+SCRUM-30-mostrar-estadisticas
 #include <string>S
 #include "funciones.h"
 using namespace std;
@@ -24,20 +25,44 @@ do
 		    // TO DO funcionalidad de jugar
         }
         else if (opcion == 2)
+
+#include "funciones.h"
+using namespace std;
+
+int main()
+{
+    srand(time(0));
+
+    int opcion;
+    do
+    {
+        mostrarMenu();
+        cin >> opcion;
+        switch (opcion)
+developer
         {
-         	// TO DO funcionalidad de estadísticas
+        case 1:
+            // TODO jugar
+            cout << "Ingreso a la fucion jugar" << endl;
+            break;
+        case 2:
+            // TODO estadisticas
+            cout << "Ingreso a la funcion estadisticas" << endl;
+            break;
+        case 3:
+            mostrarCreditos();
+            break;
+        case 0:
+        {
+            char confirm;
+            cout << "\nSeguro que queres salir? (s/n): ";
+            cin >> confirm;
+            if (confirm != 's')
+                opcion = -1;
+            break;
         }
-        else if (opcion == 3)
-        {
-         	// TO DO funcionalidad de creditos
-        }
-        else if (opcion == 0)
-        {
-       		// TO DO funcionalidad de salir de juego preguntar si desea salir 
-        }
-        else
-        {
-            cout << "Opción inválida.";
+        default:
+            cout << "\nOpción incorrecta.\n";
         }
     } while (opcion != 0);
     return 0;

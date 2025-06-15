@@ -5,28 +5,6 @@
 
 using namespace std;
 
-int seleccionarOpcion()
-{
-    int opcion;
-    do
-    {
-        cout << "Menu principal: " << endl;
-        cout << "1.Jugar" << endl;
-        cout << "2.Estadisticas" << endl;
-        cout << "3.Creditos" << endl;
-        cout << "0.Salir" << endl;
-        cin >> opcion;
-
-        switch (opcion)
-        {
-        case 0:
-            return 0;
-            break;
-        }
-    } while (opcion != 0);
-    return opcion;
-}
-
 int tirarDado(int caras)
 {
     return (rand() % caras) + 1;
@@ -97,18 +75,22 @@ int lanzarDadosObjetivo()
     return tirarDado(12) + tirarDado(12);
 }
 
-
-string definirCampeon(int puntos1, int puntos2, int rondas, string jugador1, string jugador2) {
-    if (rondas != 3) {
+string definirCampeon(int puntos1, int puntos2, int rondas, string jugador1, string jugador2)
+{
+    if (rondas != 3)
+    {
         return "";
-        }
-    if (puntos1 > puntos2) {
+    }
+    if (puntos1 > puntos2)
+    {
         return jugador1;
-    
-    } else if (puntos2 > puntos1) {
+    }
+    else if (puntos2 > puntos1)
+    {
         return jugador2;
-
-    } else { 
+    }
+    else
+    {
         return "Empate";
     }
 }
@@ -133,7 +115,6 @@ int computarPuntaje(int suma, int dadosElegidos[], int tamano, int objetivo)
         return 0;
     }
 }
-
 
 void elegirCombinacion(int objetivo, int dados[], int tamano, int seleccionados[], int &tamanoSeleccionados)
 {
@@ -172,12 +153,14 @@ void elegirCombinacion(int objetivo, int dados[], int tamano, int seleccionados[
         cout << "Siguiente dado (0 para terminar): ";
     }
 }
+
 void modificarDados(int &jugador, int tamanoSeleccionados, int &rival)
 {
     jugador -= tamanoSeleccionados;
     rival += tamanoSeleccionados;
 }
 
+ SCRUM-30-mostrar-estadisticas
 void mostrarEstadisticas(const Estadisticas& stats) {
     if (stats.mayorPuntaje == 0) {
        std:: cout << "No hay estadísticas aún, no se jugaron partidas." << std:: endl;
@@ -191,5 +174,34 @@ void actualizarEstadisticas(Estadisticas& stats, const string& jugador, int punt
     if (puntaje > stats.mayorPuntaje) {
         stats.mayorPuntaje = puntaje;
         stats.mejorJugador = jugador;
+
+void castigarFallo(int &jugador, int &rival)
+{
+    if (rival > 1)
+    {
+        rival--;
+        jugador++;
+    }
+}
+
+void cambiarTurno(int &puntos1, int &puntos2, int &stock1, int &stock2, int &turno)
+{
+    if (turno == 1)
+        turno = 2;
+    else
+        turno = 1;
+}
+
+bool chequearTriunfo(int jugador, int &puntos)
+{
+    if (jugador == 0)
+    {
+        puntos += 10000;
+        return true;
+    }
+    else
+    {
+        return false;
+developer
     }
 }
