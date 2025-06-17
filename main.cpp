@@ -5,6 +5,8 @@ using namespace std;
 int main()
 {
     srand(time(0));
+    string maxNombre = "";
+    int maxPuntaje = 0;
 
     int opcion;
     do
@@ -14,8 +16,7 @@ int main()
         switch (opcion)
         {
         case 1:
-            // TODO jugar
-            cout << "Ingreso a la fucion jugar" << endl;
+            jugar(maxNombre, maxPuntaje);
             break;
         case 2:
             // TODO estadisticas
