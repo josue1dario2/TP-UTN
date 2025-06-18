@@ -171,24 +171,14 @@ void castigarFallo(int &jugador, int &rival)
 
 void cambiarTurno(int &puntos1, int &puntos2, int &stock1, int &stock2, int &turno)
 {
-    if (turno == 1)
-        turno = 2;
-    else
-        turno = 1;
+    turno = (turno == 1) ? 2 : 1;
 }
 
 bool chequearTriunfo(int jugador, int &puntos)
 {
-    if (jugador == 0)
-    {
-        puntos += 10000;
-        return true;
-    }
-    else
-    {
-        return false;
-    }
+    return (jugador == 0) ? (puntos += 10000, true) : false;
 }
+
 void jugar(string &maxNombre, int &maxPuntaje)
 {
     string jugador1, jugador2;
