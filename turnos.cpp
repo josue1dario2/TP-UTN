@@ -28,8 +28,5 @@ int quienEmpieza(string jugador1, string jugador2)
 
 void cambiarTurno(int &puntos1, int &puntos2, int &stock1, int &stock2, int &turno)
 {
-    if (turno == 1)
-        turno = 2;
-    else
-        turno = 1;
+    turno = (turno == 1) ? 2 : 1;
 }
