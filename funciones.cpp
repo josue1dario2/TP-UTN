@@ -43,21 +43,12 @@ int quienEmpieza(string jugador1, string jugador2)
         cout << jugador2 << " tira: " << dado2 << endl;
 
         if (dado1 == dado2)
-        {
             cout << "¡Empate! Tirando de nuevo..." << endl;
-        }
+
     } while (dado1 == dado2);
 
-    if (dado1 > dado2)
-    {
-        cout << jugador1 << " gana la tirada inicial!" << endl;
-        return 1;
-    }
-    else
-    {
-        cout << jugador2 << " gana la tirada inicial!" << endl;
-        return 2;
-    }
+    cout << (dado1 > dado2 ? jugador1 : jugador2) << " gana la tirada inicial!" << endl;
+    return dado1 > dado2 ? 1 : 2;
 }
 
 void mostrarMenu()
@@ -106,14 +97,7 @@ void tirarDadosJugador(int cantidad, int dados[])
 
 int computarPuntaje(int suma, int dadosElegidos[], int tamano, int objetivo)
 {
-    if (suma == objetivo)
-    {
-        return suma * tamano;
-    }
-    else
-    {
-        return 0;
-    }
+    return suma == objetivo ? suma * tamano : 0;
 }
 
 void elegirCombinacion(int objetivo, int dados[], int tamano, int seleccionados[], int &tamanoSeleccionados)
@@ -143,11 +127,9 @@ void elegirCombinacion(int objetivo, int dados[], int tamano, int seleccionados[
         seleccionados[tamanoSeleccionados++] = dados[indiceDado - 1];
         sumaActual += dados[indiceDado - 1];
         cout << "Suma actual: " << sumaActual << "\n";
-        if (sumaActual == objetivo)
-            return;
-        if (sumaActual > objetivo)
+        if (sumaActual >= objetivo)
         {
-            tamanoSeleccionados = 0;
+            tamanoSeleccionados = sumaActual > objetivo ? 0 : tamanoSeleccionados;
             return;
         }
         cout << "Siguiente dado (0 para terminar): ";
