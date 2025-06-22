@@ -1,5 +1,5 @@
 #include <iostream>
-#include "funciones.h"
+#include "juego.h"
 using namespace std;
 
 int main()
