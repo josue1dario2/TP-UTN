@@ -41,7 +41,7 @@ El jugador debe elegir algunos de sus dados stock cuya suma sea igual al número
 ¡Prepará tus dados y que empiece la partida! 🧠🎲
 
 Alumnos: 
-Josué Solis
-Lucia Aylen Maffey
-Ivan Totilo 
-Camila Milagros Rivero
+- Josué Solis
+- Lucia Aylen Maffey
+- Ivan Totilo 
+- Camila Milagros Rivero
