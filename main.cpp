@@ -4,7 +4,9 @@
 using namespace std;
 
 int main() {
+
 srand(time(0));
+    srand(time(0));
 
     Estadisticas stats;
     stats.mayorPuntaje = 100;

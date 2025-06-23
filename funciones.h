@@ -20,5 +20,4 @@ bool chequearTriunfo(int jugador, int &puntos);
 void castigarFallo(int &jugador, int &rival);
 void cambiarTurno(int &puntos1, int &puntos2, int &stock1, int &stock2, int &turno);
 string definirCampeon(int puntos1, int puntos2, int rondas, string jugador1, string jugador2);
-void mostrarEstadisticas(const Estadisticas& stats);
-void actualizarEstadisticas(Estadisticas& stats, const string& jugador, int puntaje);
+void mostrarEstadisticas(Estadisticas stats);
