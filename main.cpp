@@ -1,12 +1,15 @@
 #include <iostream>
 #include "funciones.h"
 #include <time.h>
+#include "juego.h"
 using namespace std;
 
 int main() {
 
 srand(time(0));
     srand(time(0));
+    string maxNombre = "";
+    int maxPuntaje = 0;
 
     Estadisticas stats;
     stats.mayorPuntaje = 100;
@@ -19,8 +22,7 @@ srand(time(0));
 
         switch (opcion) {
         case 1:
-            // TODO jugar
-            cout << "Ingreso a la fucion jugar" << endl;
+            jugar(maxNombre, maxPuntaje);
             break;
 
         case 2:
