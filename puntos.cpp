@@ -32,3 +32,14 @@ string definirCampeon(int puntos1, int puntos2, int rondas, string jugador1, str
         return "Empate";
     }
 }
+
+void mostrarEstadisticas(string mejorJugador, int mayorPuntaje) {
+    cout << "\nEstadísticas del juego:\n"; 
+    if (mayorPuntaje > 0) {
+        cout << "Mejor jugador: " << mejorJugador << "\n";
+        cout << "Mayor puntaje: " << mayorPuntaje << "\n";
+    } else {
+        cout << "No hay estadísticas disponibles.\n";
+    }
+    
+}

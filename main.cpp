@@ -11,9 +11,6 @@ srand(time(0));
     string maxNombre = "";
     int maxPuntaje = 0;
 
-    Estadisticas stats;
-    stats.mayorPuntaje = 100;
-    stats.mejorJugador = "Jugador 1";
 
     int opcion;
     do {
@@ -22,11 +19,11 @@ srand(time(0));
 
         switch (opcion) {
         case 1:
-            jugar(maxNombre, maxPuntaje);
+            jugar( maxNombre, maxPuntaje);
             break;
 
         case 2:
-            mostrarEstadisticas(stats); // ← ESTADÍSTICAS
+            mostrarEstadisticas( maxNombre, maxPuntaje); 
                 break;
         case 3:
             mostrarCreditos();
