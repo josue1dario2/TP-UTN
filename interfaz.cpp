@@ -1,13 +1,11 @@
-
 #include "interfaz.h"
-#include "rlutil.h"
 #include <ctime>
 #include <iostream>
 using namespace std;
 
 void limpiarPantalla()
 {
-    rlutil::cls();
+    //rlutil::cls();
 }
 
 void mostrarMenu()
