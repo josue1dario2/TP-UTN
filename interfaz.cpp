@@ -5,7 +5,7 @@ using namespace std;
 
 void limpiarPantalla()
 {
-    //rlutil::cls();
+    rlutil::cls();
 }
 
 void mostrarMenu()
