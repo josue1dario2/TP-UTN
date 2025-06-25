@@ -1,30 +1,31 @@
 #include <iostream>
-#include "funciones.h"
 #include <time.h>
 #include "juego.h"
 using namespace std;
 
-int main() {
+int main()
+{
 
-srand(time(0));
+    srand(time(0));
     srand(time(0));
     string maxNombre = "";
     int maxPuntaje = 0;
 
-
     int opcion;
-    do {
+    do
+    {
         mostrarMenu();
         cin >> opcion;
 
-        switch (opcion) {
+        switch (opcion)
+        {
         case 1:
-            jugar( maxNombre, maxPuntaje);
+            jugar(maxNombre, maxPuntaje);
             break;
 
         case 2:
-            mostrarEstadisticas( maxNombre, maxPuntaje); 
-                break;
+            mostrarEstadisticas(maxNombre, maxPuntaje);
+            break;
         case 3:
             mostrarCreditos();
             break;
