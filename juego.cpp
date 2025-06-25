@@ -1,6 +1,6 @@
 #include "juego.h"
-#include "rlutil.h"
 #include <ctime>
+#include "rlutil.h"
 #include <iostream>
 
 using namespace std;
