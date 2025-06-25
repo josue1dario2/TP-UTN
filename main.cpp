@@ -1,5 +1,4 @@
 #include <iostream>
-#include "funciones.h"
 #include <time.h>
 #include "juego.h"
 using namespace std;
