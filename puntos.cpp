@@ -15,22 +15,10 @@ bool chequearTriunfo(int jugador, int &puntos)
 
 string definirCampeon(int puntos1, int puntos2, int rondas, string jugador1, string jugador2)
 {
-    if (rondas != 3)
-    {
-        return "";
-    }
-    if (puntos1 > puntos2)
-    {
-        return jugador1;
-    }
-    else if (puntos2 > puntos1)
-    {
-        return jugador2;
-    }
-    else
-    {
-        return "Empate";
-    }
+    return (rondas != 3) ? "" :
+           (puntos1 > puntos2) ? jugador1 :
+           (puntos2 > puntos1) ? jugador2 :
+           "Empate";
 }
 
 void mostrarEstadisticas(string mejorJugador, int mayorPuntaje) {
