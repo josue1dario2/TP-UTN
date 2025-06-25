@@ -1,3 +1,4 @@
+typedef unsigned char byte;
 #include "juego.h"
 #include "rlutil.h"
 #include <ctime>
