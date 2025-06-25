@@ -1,5 +1,4 @@
 #include "juego.h"
-#include "rlutil.h"
 #include <ctime>
 #include <iostream>
 
