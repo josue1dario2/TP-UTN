@@ -19,6 +19,7 @@ string definirCampeon(int puntos1, int puntos2, int rondas, string jugador1, str
            (puntos1 > puntos2) ? jugador1 :
            (puntos2 > puntos1) ? jugador2 :
            "Empate";
+           
 }
 
 void mostrarEstadisticas(string mejorJugador, int mayorPuntaje) {
