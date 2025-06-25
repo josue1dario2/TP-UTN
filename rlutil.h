@@ -54,17 +54,18 @@ RLUTIL_INLINE void locate(int x, int y); // Forward declare for C to avoid warni
 #endif              // __cplusplus
 
 #ifdef _WIN32
-#include <windows.h> // for WinAPI and Sleep()
 #define _NO_OLDNAMES // for MinGW compatibility
 #include <conio.h>   // for getch() and kbhit()
 #define getch _getch
 #define kbhit _kbhit
+#include <windows.h> // for WinAPI and Sleep()
 #else
 #include <termios.h>   // for getch() and kbhit()
 #include <unistd.h>    // for getch(), kbhit() and (u)sleep()
 #include <sys/ioctl.h> // for getkey()
 #include <sys/types.h> // for kbhit()
 #include <sys/time.h>  // for kbhit()
+
 
 /// Function: getch
 /// Get character without waiting for Return to be pressed.
