@@ -1,5 +1,5 @@
-typedef unsigned char byte;
 #include "juego.h"
+typedef unsigned char byte;
 #include "rlutil.h"
 #include <ctime>
 #include <iostream>
