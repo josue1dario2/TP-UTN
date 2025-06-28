@@ -1,6 +1,6 @@
 #include <iostream>
 #include <time.h>
-#include "juego.h"
+#include "main.h"
 using namespace std;
 
 int main()
