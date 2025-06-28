@@ -8,9 +8,14 @@ int computarPuntaje(int suma, int dadosElegidos[], int tamano, int objetivo)
     return suma == objetivo ? suma * tamano : 0;
 }
 
-bool chequearTriunfo(int jugador, int &puntos)
+bool chequearTriunfo(int stock, int &puntos)
 {
-    return (jugador == 0) ? (puntos += 10000, true) : false;
+    if (stock == 0)
+    {
+        puntos += PUNTOS_TRIUNFO;
+        return true;
+    }
+    return false;
 }
 
 string definirCampeon(int puntos1, int puntos2, int rondas, string jugador1, string jugador2)
@@ -33,13 +38,16 @@ string definirCampeon(int puntos1, int puntos2, int rondas, string jugador1, str
     }
 }
 
-void mostrarEstadisticas(string mejorJugador, int mayorPuntaje) {
-    cout << "\nEstadísticas del juego:\n"; 
-    if (mayorPuntaje > 0) {
+void mostrarEstadisticas(string mejorJugador, int mayorPuntaje)
+{
+    cout << "\nEstadísticas del juego:\n";
+    if (mayorPuntaje > 0)
+    {
         cout << "Mejor jugador: " << mejorJugador << "\n";
         cout << "Mayor puntaje: " << mayorPuntaje << "\n";
-    } else {
+    }
+    else
+    {
         cout << "No hay estadísticas disponibles.\n";
     }
-    
 }

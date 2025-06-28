@@ -7,7 +7,6 @@ using namespace std;
 int quienEmpieza(string jugador1, string jugador2)
 {
     int dado1, dado2;
-    srand(time(0)); // Inicializa el generador de números aleatorios con la hora actual
 
     do
     {

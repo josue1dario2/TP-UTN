@@ -19,7 +19,7 @@ void tirarDadosJugador(int cantidad, int dados[])
 
     for (int i = 0; i < cantidad; i++)
     {
-        dados[i] = tirarDado(cantidad);
+        dados[i] = tirarDado(6);
     }
 }
 
@@ -27,16 +27,31 @@ void elegirCombinacion(int objetivo, int dados[], int tamano, int seleccionados[
 {
     tamanoSeleccionados = 0;
     int sumaActual = 0;
-    cout << "Dados disponibles:\n";
+    bool usados[tamano];
     for (int i = 0; i < tamano; i++)
     {
-        cout << "  [" << i + 1 << "] " << dados[i];
+        usados[i] = false;
     }
-    cout << "\n\nSelecciona los dados por su número (0 para terminar): ";
+
     while (sumaActual < objetivo)
     {
+        cout << "Dados disponibles (Objetivo: " << objetivo << "):\n";
+        for (int i = 0; i < tamano; i++)
+        {
+            if (!usados[i])
+            {
+                cout << "  [" << i + 1 << "] " << dados[i];
+            }
+        }
+        cout << "\n\nSelecciona los dados por su número (0 para terminar): ";
         int indiceDado;
-        cin >> indiceDado;
+        if (!(cin >> indiceDado))
+        {
+            rlutil::setColor(rlutil::RED);
+            cout << "Entrada inválida. Intenta de nuevo: ";
+            rlutil::resetColor();
+            continue;
+        }
         if (indiceDado == 0)
         {
             tamanoSeleccionados = 0;
@@ -44,10 +59,20 @@ void elegirCombinacion(int objetivo, int dados[], int tamano, int seleccionados[
         }
         if (indiceDado < 1 || indiceDado > tamano)
         {
+            rlutil::setColor(rlutil::RED);
             cout << "Número inválido. Intenta de nuevo: ";
+            rlutil::resetColor();
+            continue;
+        }
+        if (usados[indiceDado - 1])
+        {
+            rlutil::setColor(rlutil::RED);
+            cout << "Ese dado ya está tomado. Intenta de nuevo: ";
+            rlutil::resetColor();
             continue;
         }
         seleccionados[tamanoSeleccionados++] = dados[indiceDado - 1];
+        usados[indiceDado - 1] = true;
         sumaActual += dados[indiceDado - 1];
         cout << "Suma actual: " << sumaActual << "\n";
         if (sumaActual == objetivo)
@@ -57,6 +82,5 @@ void elegirCombinacion(int objetivo, int dados[], int tamano, int seleccionados[
             tamanoSeleccionados = 0;
             return;
         }
-        cout << "Siguiente dado (0 para terminar): ";
     }
 }
