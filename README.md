@@ -45,4 +45,3 @@ Alumnos:
 - Lucia Aylen Maffey
 - Ivan Totilo 
 - Camila Milagros Rivero
-
