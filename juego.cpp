@@ -7,15 +7,10 @@ using namespace std;
 
 bool jugarTurno(string nombre, int &stock, int &puntos, int &stockOponente, int objetivo)
 {
-    rlutil::setColor(rlutil::CYAN);
-    cout << "\n🎲 Turno de " << nombre << " 🎲\n";
-    rlutil::resetColor();
-    cout << "Stock: " << stock << " dados | Puntos: " << puntos << "\n";
-    cout << "Dados objetivo: " << objetivo << "\n\n";
     int dados[stock];
     tirarDadosJugador(stock, dados);
     int seleccionados[stock], tamanoSeleccionados;
-    elegirCombinacion(objetivo, dados, stock, seleccionados, tamanoSeleccionados);
+    elegirCombinacion(objetivo, dados, stock, seleccionados, tamanoSeleccionados, nombre, stock, puntos);
     int suma = 0;
     for (int i = 0; i < tamanoSeleccionados; i++)
         suma += seleccionados[i];
@@ -63,10 +58,12 @@ void jugar(string &maxNombre, int &maxPuntaje)
     cin >> jugador2;
     cout << "\n";
 
-    int stock1 = STOCK_INICIAL, stock2 = STOCK_INICIAL, puntos1 = PUNTOS_INICIAL, puntos2 = PUNTOS_INICIAL, rondas = 0, turno;
+    int stock1 = STOCK_INICIAL, stock2 = STOCK_INICIAL, puntos1 = 0, puntos2 = 0, rondas = 0, turno;
     turno = quienEmpieza(jugador1, jugador2);
     rlutil::setColor(rlutil::YELLOW);
     cout << "\n🎲 " << (turno == 1 ? jugador1 : jugador2) << " comienza la partida! 🎲\n";
+    rlutil::setColor(rlutil::CYAN);
+    cout << "Puntos iniciales: " << (turno == 1 ? puntos1 : puntos2) << "\n";
     rlutil::resetColor();
 
     bool juegoTerminado = false;
@@ -78,6 +75,7 @@ void jugar(string &maxNombre, int &maxPuntaje)
         cout << "                Ronda " << rondas << "\n";
         cout << "========================================\n";
         rlutil::resetColor();
+        cout << std::flush;
 
         int objetivo = lanzarDadosObjetivo();
         if (turno == 1)

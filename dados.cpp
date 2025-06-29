@@ -24,7 +24,7 @@ void tirarDadosJugador(int cantidad, int dados[])
     }
 }
 
-void elegirCombinacion(int objetivo, int dados[], int tamano, int seleccionados[], int &tamanoSeleccionados)
+void elegirCombinacion(int objetivo, int dados[], int tamano, int seleccionados[], int &tamanoSeleccionados, std::string nombre, int stock, int puntos)
 {
     tamanoSeleccionados = 0;
     int sumaActual = 0;
@@ -34,9 +34,18 @@ void elegirCombinacion(int objetivo, int dados[], int tamano, int seleccionados[
         usados[i] = false;
     }
 
+    bool primeraIteracion = true;
     while (sumaActual < objetivo)
     {
-        cout << "Dados disponibles (Objetivo: " << objetivo << "):\n";
+        rlutil::setColor(rlutil::CYAN);
+        cout << "\n🎲 Turno de " << nombre << " 🎲\n";
+        rlutil::resetColor();
+        cout << "Stock: " << stock << " dados | Puntos: " << puntos << "\n";
+        cout << "Dados objetivo: " << objetivo << "\n\n";
+
+        rlutil::setColor(rlutil::GREEN);
+        cout << "Dados disponibles (" << (primeraIteracion ? "Objetivo: " : "Suma actual: ") << (primeraIteracion ? objetivo : sumaActual) << "):\n";
+        rlutil::resetColor();
         for (int i = 0; i < tamano; i++)
         {
             if (!usados[i])
@@ -49,8 +58,11 @@ void elegirCombinacion(int objetivo, int dados[], int tamano, int seleccionados[
         if (!(cin >> indiceDado))
         {
             rlutil::setColor(rlutil::RED);
-            cout << "Entrada inválida. Intenta de nuevo: ";
+            cout << "\n¡Error! Entrada inválida. Intenta de nuevo.\n";
             rlutil::resetColor();
+            cout << "Presiona Enter para continuar...";
+            cin.get();
+            rlutil::cls();
             continue;
         }
         if (indiceDado == 0)
@@ -58,24 +70,20 @@ void elegirCombinacion(int objetivo, int dados[], int tamano, int seleccionados[
             tamanoSeleccionados = 0;
             return;
         }
-        if (indiceDado < 1 || indiceDado > tamano)
+        if (indiceDado < 1 || indiceDado > tamano || usados[indiceDado - 1])
         {
             rlutil::setColor(rlutil::RED);
-            cout << "Número inválido. Intenta de nuevo: ";
+            cout << "\n¡Error! Dado no disponible o ya seleccionado. Intenta de nuevo.\n";
             rlutil::resetColor();
-            continue;
-        }
-        if (usados[indiceDado - 1])
-        {
-            rlutil::setColor(rlutil::RED);
-            cout << "Ese dado ya está tomado. Intenta de nuevo: ";
-            rlutil::resetColor();
+            rlutil::anykey("Presiona cualquier tecla para continuar...");
+            rlutil::cls();
             continue;
         }
         seleccionados[tamanoSeleccionados++] = dados[indiceDado - 1];
         usados[indiceDado - 1] = true;
         sumaActual += dados[indiceDado - 1];
-        cout << "Suma actual: " << sumaActual << "\n";
+        primeraIteracion = false;
+        rlutil::cls();
         if (sumaActual == objetivo)
             return;
         if (sumaActual > objetivo)
