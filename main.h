@@ -6,6 +6,4 @@
 #include "stocks.h"
 #include "turnos.h"
 #include "juego.h"
-
-#include <string>
-using namespace std;
+#include "rlutil.h"

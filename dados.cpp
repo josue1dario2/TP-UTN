@@ -1,5 +1,6 @@
 #include "dados.h"
 #include "rlutil.h"
+#include "constantes.h"
 #include <ctime>
 #include <iostream>
 using namespace std;
@@ -11,7 +12,7 @@ int tirarDado(int caras)
 
 int lanzarDadosObjetivo()
 {
-    return tirarDado(12) + tirarDado(12);
+    return tirarDado(DADOS_OBJETIVO) + tirarDado(DADOS_OBJETIVO);
 }
 
 void tirarDadosJugador(int cantidad, int dados[])
@@ -19,7 +20,7 @@ void tirarDadosJugador(int cantidad, int dados[])
 
     for (int i = 0; i < cantidad; i++)
     {
-        dados[i] = tirarDado(6);
+        dados[i] = tirarDado(DADOS_JUGADOR);
     }
 }
 

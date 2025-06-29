@@ -1,5 +1,5 @@
-#include "juego.h"
-#include "rlutil.h"
+#include "main.h"
+#include "constantes.h"
 #include <ctime>
 #include <iostream>
 
@@ -7,7 +7,9 @@ using namespace std;
 
 bool jugarTurno(string nombre, int &stock, int &puntos, int &stockOponente, int objetivo)
 {
-    cout << "\nTurno de " << nombre << "\n";
+    rlutil::setColor(rlutil::CYAN);
+    cout << "\n🎲 Turno de " << nombre << " 🎲\n";
+    rlutil::resetColor();
     cout << "Stock: " << stock << " dados | Puntos: " << puntos << "\n";
     cout << "Dados objetivo: " << objetivo << "\n\n";
     int dados[stock];
@@ -22,7 +24,7 @@ bool jugarTurno(string nombre, int &stock, int &puntos, int &stockOponente, int 
     if (puntosRonda > 0)
     {
         rlutil::setColor(rlutil::GREEN);
-        cout << "\n--- Tirada Exitosa! ---\n";
+        cout << "\n--- 🎉 Tirada Exitosa! 🎉 ---\n";
         rlutil::resetColor();
         cout << "Suma objetivo: " << objetivo << "\nDados elegidos: ";
         for (int i = 0; i < tamanoSeleccionados; i++)
@@ -31,16 +33,18 @@ bool jugarTurno(string nombre, int &stock, int &puntos, int &stockOponente, int 
         modificarDados(stock, tamanoSeleccionados, stockOponente);
         if (chequearTriunfo(stock, puntos))
         {
+            rlutil::setColor(rlutil::YELLOW);
             cout << "\n========================================\n";
-            cout << nombre << " gana la partida!\n";
+            cout << "🏆 " << nombre << " gana la partida! 🏆\n";
             cout << "========================================\n";
+            rlutil::resetColor();
             return true;
         }
     }
     else
     {
         rlutil::setColor(rlutil::RED);
-        cout << "\n--- Tirada No Exitosa ---\n";
+        cout << "\n--- 😔 Tirada No Exitosa 😔 ---\n";
         rlutil::resetColor();
         int dadosAntes = stock;
         castigarFallo(stock, stockOponente);
@@ -52,25 +56,28 @@ bool jugarTurno(string nombre, int &stock, int &puntos, int &stockOponente, int 
 void jugar(string &maxNombre, int &maxPuntaje)
 {
     string jugador1, jugador2;
-    cout << "\n--- Iniciar Juego ---\n";
+    cout << "\n--- 🎮 Iniciar Juego 🎮 ---\n";
     cout << "Nombre Jugador 1: ";
     cin >> jugador1;
     cout << "Nombre Jugador 2: ";
     cin >> jugador2;
     cout << "\n";
 
-    int stock1 = 6, stock2 = 6, puntos1 = 0, puntos2 = 0, rondas = 0, turno;
+    int stock1 = STOCK_INICIAL, stock2 = STOCK_INICIAL, puntos1 = PUNTOS_INICIAL, puntos2 = PUNTOS_INICIAL, rondas = 0, turno;
     turno = quienEmpieza(jugador1, jugador2);
-    cout << "\n"
-         << (turno == 1 ? jugador1 : jugador2) << " comienza la partida.\n";
+    rlutil::setColor(rlutil::YELLOW);
+    cout << "\n🎲 " << (turno == 1 ? jugador1 : jugador2) << " comienza la partida! 🎲\n";
+    rlutil::resetColor();
 
     bool juegoTerminado = false;
     while (rondas < 3 && !juegoTerminado)
     {
         rondas++;
+        rlutil::setColor(rlutil::YELLOW);
         cout << "\n========================================\n";
-        cout << "Ronda " << rondas << "\n";
+        cout << "                Ronda " << rondas << "\n";
         cout << "========================================\n";
+        rlutil::resetColor();
 
         int objetivo = lanzarDadosObjetivo();
         if (turno == 1)
@@ -90,15 +97,16 @@ void jugar(string &maxNombre, int &maxPuntaje)
             }
         }
     }
-
+    rlutil::setColor(rlutil::YELLOW);
     cout << "\n========================================\n";
-    cout << "Resultados Finales\n";
+    cout << "           Resultados Finales\n";
     cout << "========================================\n";
     cout << jugador1 << ": " << puntos1 << " puntos | " << stock1 << " dados\n";
     cout << jugador2 << ": " << puntos2 << " puntos | " << stock2 << " dados\n";
-    string campeon = definirCampeon(puntos1, puntos2, rondas, jugador1, jugador2);
+    string campeon = definirCampeon(puntos1, puntos2, stock1, stock2, rondas, jugador1, jugador2);
     cout << "Ganador: " << campeon << " 🏆🎉\n";
     cout << "========================================\n";
+    rlutil::resetColor();
 
     if (puntos1 > maxPuntaje)
     {
