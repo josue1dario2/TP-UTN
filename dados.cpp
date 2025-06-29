@@ -60,8 +60,7 @@ void elegirCombinacion(int objetivo, int dados[], int tamano, int seleccionados[
             rlutil::setColor(rlutil::RED);
             cout << "\n¡Error! Entrada inválida. Intenta de nuevo.\n";
             rlutil::resetColor();
-            cout << "Presiona Enter para continuar...";
-            cin.get();
+            rlutil::anykey("Presiona cualquier tecla para continuar...");
             rlutil::cls();
             continue;
         }
