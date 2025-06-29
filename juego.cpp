@@ -59,7 +59,7 @@ void jugar(string &maxNombre, int &maxPuntaje)
     cin >> jugador2;
     cout << "\n";
 
-    int stock1 = STOCK_INICIAL, stock2 = STOCK_INICIAL, puntos1 = 0, puntos2 = 0, rondas = 0, turno;
+    int stock1 = STOCK_INICIAL, stock2 = STOCK_INICIAL, puntos1 = PUNTOS_INICIAL, puntos2 = PUNTOS_INICIAL, rondas = 0, turno;
     turno = quienEmpieza(jugador1, jugador2);
     rlutil::setColor(rlutil::YELLOW);
     cout << "\n🎲 " << (turno == 1 ? jugador1 : jugador2) << " comienza la partida! 🎲\n";

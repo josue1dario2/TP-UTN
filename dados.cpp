@@ -24,7 +24,7 @@ void tirarDadosJugador(int cantidad, int dados[])
     }
 }
 
-void elegirCombinacion(int objetivo, int dados[], int tamano, int seleccionados[], int &tamanoSeleccionados, std::string nombre, int stock, int puntos)
+void elegirCombinacion(int objetivo, int dados[], int tamano, int seleccionados[], int &tamanoSeleccionados, string nombre, int stock, int puntos)
 {
     tamanoSeleccionados = 0;
     int sumaActual = 0;
