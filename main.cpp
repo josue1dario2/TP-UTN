@@ -1,12 +1,11 @@
 #include <iostream>
 #include <time.h>
-#include "juego.h"
+#include "main.h"
 using namespace std;
 
 int main()
 {
 
-    srand(time(0));
     srand(time(0));
     string maxNombre = "";
     int maxPuntaje = 0;
