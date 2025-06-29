@@ -76,11 +76,10 @@ void jugar(string &maxNombre, int &maxPuntaje)
         cout << "                Ronda " << rondas << "\n";
         cout << "========================================\n";
         rlutil::resetColor();
-        cout << std::flush;
 
-        int objetivo = lanzarDadosObjetivo();
         if (turno == 1)
         {
+            int objetivo = lanzarDadosObjetivo();
             juegoTerminado = jugarTurno(jugador1, stock1, puntos1, stock2, objetivo);
             if (!juegoTerminado)
             {
@@ -89,6 +88,7 @@ void jugar(string &maxNombre, int &maxPuntaje)
         }
         if (!juegoTerminado && turno == 2)
         {
+            int objetivo = lanzarDadosObjetivo();
             juegoTerminado = jugarTurno(jugador2, stock2, puntos2, stock1, objetivo);
             if (!juegoTerminado)
             {
