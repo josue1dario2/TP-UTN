@@ -1,6 +1,7 @@
 #include "main.h"
 #include "constantes.h"
 #include <ctime>
+#include "rlutil.h"
 #include <iostream>
 
 using namespace std;
